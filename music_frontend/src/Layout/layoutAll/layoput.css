@@ -21,18 +21,7 @@ html {
     transition: margin-left 0.3s ease;
 }
 
-.menu {
-    background-color: #231b2e;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    border-right: 1px solid #fff;
-    width: 240px;
-    /* Chiều rộng khi mở rộng */
-    transition: width 0.3s ease;
-}
+
 
 .menu.collapsed {
     width: 100px;
@@ -53,15 +42,54 @@ html {
     border-bottom: 1px solid #2a213a;
 }
 
-.mainpage {
-    margin-left: 240px;
-    /* Điều chỉnh để có không gian cho menu khi mở rộng */
-    margin-top: 70px;
-    margin-bottom: 90px;
-    padding: 20px;
-    overflow-y: auto;
-    height: calc(100vh - 160px);
-    transition: margin-left 0.3s ease;
+@media (max-width: 1000px) {
+    .menu {
+        background-color: #231b2e;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        border-right: 1px solid #2b2b2b;
+        /* Chiều rộng khi mở rộng */
+        transition: width 0.3s ease;
+    }
+
+    .mainpage {
+        margin-left: 50px;
+        /* Điều chỉnh để có không gian cho menu khi mở rộng */
+        margin-top: 70px;
+        margin-bottom: 90px;
+        padding: 20px;
+        overflow-y: auto;
+        height: calc(100vh - 160px);
+        transition: margin-left 0.3s ease;
+    }
+}
+
+@media (min-width: 1000px) {
+    .menu {
+        background-color: #231b2e;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        border-right: 1px solid #fff;
+        /* Chiều rộng khi mở rộng */
+        transition: width 0.3s ease;
+    }
+
+    .mainpage {
+        margin-left: 240px;
+        /* Điều chỉnh để có không gian cho menu khi mở rộng */
+        margin-top: 70px;
+        margin-bottom: 90px;
+        padding: 20px;
+        overflow-y: auto;
+        height: calc(100vh - 160px);
+        transition: margin-left 0.3s ease;
+    }
 }
 
 .main-wrapper.collapsed .mainpage {

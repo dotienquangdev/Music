@@ -63,8 +63,8 @@ export default function SongDetail({ title }) {
                     <div className="lyrics">{song.lyrics || "Chưa có lời bài hát."}</div>
                 </div>
                 <div className="song-detail-mai-List">
-                    <h3>Các bài hát cùng chủ đề</h3>
-                    <ul>
+                    <h3 className="song-detail-mai-List_h3">Các bài hát cùng chủ đề</h3>
+                    <ul className="song-detail-mai-List_ul">
                         {relatedSongs.map(rs => (
                             <li className="song-detail-mai-text-item" key={rs._id}>
                                 <Link to={`/song/${rs._id}`}>

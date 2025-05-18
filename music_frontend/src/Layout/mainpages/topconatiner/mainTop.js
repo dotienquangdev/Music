@@ -1,8 +1,10 @@
 import "./mainTop.css";
 import { useRef, useState } from "react";
+import { useEffect } from "react";
 
 export default function MainTop() {
     const imgContainerRef = useRef();
+
     const [topMusic, setTopMusic] = useState([
         {
             avatar: "http://res.cloudinary.com/dfjft1zvv/image/upload/v1723456820/images/gqdyjxgfu08marrkje0c.jpg",
@@ -92,6 +94,18 @@ export default function MainTop() {
 
         setTimeout(() => setIsTransitioning(false), 1000); // Sau 1 giây mới cho phép chuyển ảnh tiếp
     };
+
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (!isTransitioning) {
+                rotateRight(); // Tự chuyển ảnh sang phải
+            }
+        }, 10000); // 3 giây một lần
+
+        return () => clearInterval(interval); // Dọn dẹp khi component unmount
+    }, [isTransitioning]); // Theo dõi trạng thái chuyển ảnh
+
 
     return (
         <div className="mainTop">

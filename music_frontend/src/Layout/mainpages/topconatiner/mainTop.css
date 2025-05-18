@@ -1,6 +1,6 @@
 .mainTop {
-    width: 100%;
-    height: auto;
+    /* width: 100%;
+    height: auto; */
     display: flex;
     align-items: center;
     gap: 12px;
@@ -56,4 +56,28 @@
 .mainTop-img:hover img {
     transform: scale(1.08);
     filter: brightness(85%);
+}
+
+@media (max-width: 1200px) {
+    .mainTop-img:nth-child(n+5) {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .mainTop-img:nth-child(n+4) {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainTop-img:nth-child(n+3) {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .mainTop-img:nth-child(n+2) {
+        display: none;
+    }
 }

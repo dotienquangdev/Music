@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
 import "./ibrary.css";
+import { createSong } from "../../services/song";
 
 export default function Ibeary() {
+    const [song, setSong] = useState([]);
     const [likedSongs, setLikedSongs] = useState([]);
     const [currentId, setCurrentId] = useState(() => {
         return localStorage.getItem('currentId') || '';
     });
 
     useEffect(() => {
+        const fetchSong = async () => {
+            const result = await createSong();
+            setSong(result.song);
+        }
+
         const data = JSON.parse(localStorage.getItem('likedSongs')) || [];
         setLikedSongs(data);
+        fetchSong();
     }, []);
 
     const removeFromLiked = (id) => {
@@ -51,6 +59,7 @@ export default function Ibeary() {
                             <div className="Ibeary-info">
                                 <p>{song.title}</p>
                                 <p>{song.singerName}</p>
+                                <p>{song.like} like</p>
                             </div>
                             <i
                                 className="fa-solid fa-heart remove-heart Ibeary-icon"

@@ -18,6 +18,7 @@ export default function Menu() {
                 <div className="menu-logo" id="menu-logo">
                     <div className="menu-logo_in">
                         <img
+                            className="menu-logo-img"
                             src="https://yt3.googleusercontent.com/ytc/AIdro_kfPqO-m9zcBxusjVAWHXrEVzNn2zFiauJ5D9VKmCBNO8g=s900-c-k-c0x00ffffff-no-rj"
                             alt="ZingMB3"
                         />
@@ -29,13 +30,6 @@ export default function Menu() {
                     <NavLink to="/" className={({ isActive }) => isActive ? "menu-link active" : "menu-link"}>
                         <i className="fa-brands fa-cc-discover"></i> <span>Khám Phá</span>
                     </NavLink>
-
-                    {/* Thư viện - Level >= 2 */}
-                    {/* {userLevel >= 1 && (
-                        <NavLink to="/library" className={({ isActive }) => isActive ? "menu-link active" : "menu-link"}>
-                            <i className="fa-solid fa-heart"></i> <span>Thư Viện</span>
-                        </NavLink>
-                    )} */}
 
                     {/* Thư viện - Ai cũng thấy, nhưng nếu chưa đăng nhập thì cảnh báo */}
                     <NavLink
@@ -72,9 +66,10 @@ export default function Menu() {
                         </NavLink>
                     </div>
                     {userLevel < 3 && (
-                        <div div className="upgrade-banner">
+                        <div div className="upgrade-banner" onClick={() => handleMomo(messageApi)}>
+                            <i class="fa-solid fa-caret-up"></i>
                             <div className="upgrade-text">Nghe nhạc không quảng cáo cùng kho nhạc PREMIUM</div>
-                            <button className="upgrade-button" onClick={() => handleMomo(messageApi)}>
+                            <button className="upgrade-button" >
                                 Nâng Cấp Tài Khoản
                             </button>
                         </div>

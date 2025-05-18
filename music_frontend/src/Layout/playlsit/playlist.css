@@ -21,35 +21,102 @@
     display: flex;
 }
 
-.playListIn .playListIn-left img {
-    border-radius: 10px;
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    transition: transform 1s ease, filter 1s ease;
-    margin: 3px;
+@media (min-width: 800px) {
+    .playListIn .playListIn-left {
+        left: 0;
+        width: 33%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .playListIn-left-icon {
+        display: flex;
+    }
+
+    .playListIn-left-icon i {
+        margin: 2px;
+    }
+
+    .playListIn-left-icon i:hover {
+        color: violet;
+    }
+
+    .playListIn .playListIn-left span {
+        margin: 3px;
+    }
+
+    .playListIn .playListIn-left img {
+        border-radius: 10px;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        transition: transform 1s ease, filter 1s ease;
+        margin: 3px;
+    }
+
+    .playListIn .playListIn-left img:hover {
+        transform: scale(1.08);
+        filter: brightness(85%);
+    }
+
+    .volume-control {
+        margin-left: -70px;
+        margin-top: -30px;
+    }
+
 }
 
-.playListIn .playListIn-left img:hover {
-    transform: scale(1.08);
-    filter: brightness(85%);
+@media (max-width: 800px) {
+    .playListIn .playListIn-left {
+        left: 0;
+        width: 15%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .playListIn-left-icon {
+        display: none;
+    }
+
+    .playListIn-left-icon i {
+        margin: 2px;
+    }
+
+    .playListIn-left-icon i:hover {
+        color: violet;
+    }
+
+    .playListIn .playListIn-left span {
+        margin: 3px;
+        display: none;
+    }
+
+    .playListIn .playListIn-left img {
+        border-radius: 10px;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        transition: transform 1s ease, filter 1s ease;
+        margin: 3px;
+    }
+
+    .playListIn .playListIn-left img:hover {
+        transform: scale(1.08);
+        filter: brightness(85%);
+    }
+
+    .volume-control {
+        margin-left: -70px;
+        margin-top: -30px;
+        display: none;
+
+    }
+
+
 }
 
-.playListIn .playListIn-left span {
-    margin: 3px;
-}
-
-.playListIn-left-icon {
-    display: flex;
-}
-
-.playListIn-left-icon i {
-    margin: 2px;
-}
-
-.playListIn-left-icon i:hover {
-    color: violet;
-}
 
 .playListIn .playListIn-audio {
 
@@ -109,10 +176,6 @@
     cursor: pointer;
 }
 
-.volume-control {
-    margin-left: -70px;
-    margin-top: -30px;
-}
 
 .playListIn-right {
     display: flex;

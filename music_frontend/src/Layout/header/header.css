@@ -1,18 +1,37 @@
-.headers {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 230px;
-    /* Khoảng cách từ trái, nếu có sidebar */
-    height: 70px;
-    padding: 0 var(--padding-section);
-    /* Khoảng cách bên trái và bên phải */
-    width: calc(100% - 230px);
-    /* Chiều rộng sẽ giảm bớt khoảng cách từ sidebar */
-    z-index: 100;
-    background-color: #170f23;
-    transition: left .4s;
+@media (min-width: 1000px) {
+    .headers {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 230px;
+        height: 70px;
+        padding: 0 var(--padding-section);
+        /* Khoảng cách bên trái và bên phải */
+        width: calc(100% - 230px);
+        /* Chiều rộng sẽ giảm bớt khoảng cách từ sidebar */
+        z-index: 100;
+        background-color: #170f23;
+        transition: left .4s;
+    }
+}
+
+@media (max-width: 1000px) {
+    .headers {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 60px;
+        height: 70px;
+        padding: 0 var(--padding-section);
+        /* Khoảng cách bên trái và bên phải */
+        width: calc(100% - 230px);
+        /* Chiều rộng sẽ giảm bớt khoảng cách từ sidebar */
+        z-index: 100;
+        background-color: #170f23;
+        transition: left .4s;
+    }
 }
 
 .header-search {
@@ -83,6 +102,7 @@ a {
     /* điều chỉnh theo chiều cao header */
     left: 10px;
     width: 400px;
+    margin: 5px;
     max-height: 400px;
     overflow-y: auto;
     background-color: #fff;
